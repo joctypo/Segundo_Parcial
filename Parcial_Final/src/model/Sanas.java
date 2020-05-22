@@ -23,11 +23,12 @@ public class Sanas extends Objeto {
 		this.tamx=tam1;
 		this.tamy=tam2;
 		this.app2=apP;
+		direcx=(int)app2.random(1,4);
+		direcy=(int)app2.random(1,4);
 	}
 
 	public void mover() {
-		direcx=(int)app2.random(1,4);
-		direcy=(int)app2.random(1,4);
+
 		
 		posx=posx+direcx;
 		posy=posy+direcy;
