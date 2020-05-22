@@ -19,7 +19,7 @@ public class Sanas extends Objeto {
 		super(tam1, tam2, colorcito, pox, poy, apP);
 		// TODO Auto-generated constructor stub
 		this.posx=(int) (apP.random(1, 500));;
-		this.posy=(int) (apP.random(1, 500));;
+		this.posy=(int) (apP.random(100, 500));;
 		this.colorc=colorcito;
 		this.tamx=tam1;
 		this.tamy=tam2;
@@ -52,7 +52,7 @@ public class Sanas extends Objeto {
 			direcx = direcx*(-1);
 			
 		}
-		if (posy<1 || posy>599) {
+		if (posy<100 || posy>599) {
 			
 			direcy= direcy*(-1);
 			

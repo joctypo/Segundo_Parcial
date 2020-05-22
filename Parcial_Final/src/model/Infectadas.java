@@ -53,7 +53,7 @@ public class Infectadas extends Objeto{
 			direcx= direcx*(-1);
 			
 		}
-		if (posy<5 || posy>595) {
+		if (posy<100 || posy>595) {
 			
 			direcy= direcy*(-1);
 			

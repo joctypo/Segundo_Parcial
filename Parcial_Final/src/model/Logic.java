@@ -39,7 +39,7 @@ public class Logic {
 
 				for (int j = 0; j < tam1; j++) {
 					int pox = (int) (apP.random(1, 500));
-					int poy = (int) (apP.random(1, 500));
+					int poy = (int) (apP.random(100, 500));
 					objetitos.add(new Sanas(7, 7, colorcito, pox, poy, apP));
 
 				}
@@ -51,7 +51,7 @@ public class Logic {
 
 				for (int j = 0; j < tam1; j++) {
 					int pox = (int) (apP.random(1, 500));
-					int poy = (int) (apP.random(1, 500));
+					int poy = (int) (apP.random(100, 500));
 					objetitos.add(new Infectadas(7, 7, colorcito, pox, poy, apP));
 
 				}
@@ -63,7 +63,7 @@ public class Logic {
 
 				for (int j = 0; j < tam1; j++) {
 					int pox = (int) (apP.random(1, 500));
-					int poy = (int) (apP.random(1, 500));
+					int poy = (int) (apP.random(100, 500));
 					objetitos.add(new Sanas(7, 7, colorcito, pox, poy, apP));
 
 				}
