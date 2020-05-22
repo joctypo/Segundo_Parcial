@@ -35,6 +35,7 @@ public class Main extends PApplet {
 	public void draw() {
 		
 		mc.draw();
+		verficarchoque();
 		if (mensaje1==true) {
 			//coloco el txt
 			

@@ -12,7 +12,8 @@ public class Infectadas extends Objeto{
 	private int tamy;
 	private int direcx;
 	private int direcy;
-	
+	private int signo;
+	private int signo2;
 	
 	
 	public Infectadas(int tam1, int tam2, int colorcito, int pox, int poy, PApplet apP) {
@@ -23,8 +24,22 @@ public class Infectadas extends Objeto{
 		this.tamx=tam1;
 		this.tamy=tam2;
 		this.app2=apP;
+		
+		signo=(int)app2.random(1,3);
 		direcx=(int)app2.random(1,4);
+		if (signo==2) {
+			
+			direcx= direcx*(-1);
+		}
+		
+		signo2=(int)app2.random(1,3);
+
 		direcy=(int)app2.random(1,4);
+		if (signo==2) {
+			
+			direcy= direcy*(-1);
+		}
+		
 	}
 
 	public void mover() {
@@ -45,7 +60,8 @@ public class Infectadas extends Objeto{
 		}
 		setPosx(posx);
 		setPosy(posy);
-		
+		setDirecx(direcx);
+		setDirecy(direcy);
 		
 		
 	}

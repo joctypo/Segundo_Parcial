@@ -12,7 +12,8 @@ public class Sanas extends Objeto {
 	private int tamy;
 	private int direcx;
 	private int direcy;
-	
+	private int signo;
+	private int signo2;
 	
 	public Sanas(int tam1, int tam2, int colorcito, int pox, int poy, PApplet apP) {
 		super(tam1, tam2, colorcito, pox, poy, apP);
@@ -23,8 +24,21 @@ public class Sanas extends Objeto {
 		this.tamx=tam1;
 		this.tamy=tam2;
 		this.app2=apP;
+		
+		signo=(int)app2.random(1,3);
 		direcx=(int)app2.random(1,4);
+		if (signo==2) {
+			
+			direcx= direcx*(-1);
+		}
+		
+		signo2=(int)app2.random(1,3);
+		
 		direcy=(int)app2.random(1,4);
+		if (signo==2) {
+			
+			direcy= direcy*(-1);
+		}
 	}
 
 	public void mover() {
@@ -33,18 +47,20 @@ public class Sanas extends Objeto {
 		posx=posx+direcx;
 		posy=posy+direcy;
 		
-		if (posx<5 || posx>595) {
+		if (posx<1 || posx>599) {
 			
 			direcx = direcx*(-1);
 			
 		}
-		if (posy<5 || posy>595) {
+		if (posy<1 || posy>599) {
 			
 			direcy= direcy*(-1);
 			
 		}
 		setPosx(posx);
 		setPosy(posy);
+		setDirecx(direcx);
+		setDirecy(direcy);
 		
 		
 		

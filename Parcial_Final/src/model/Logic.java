@@ -75,15 +75,15 @@ public class Logic {
 		for (int i = 0; i < objetitos.size(); i++) {
 
 			objetitos.get(i).draw();
-
+			
 			// Creación de Hilo
 			Thread Nh;
 			Nh = new Thread(objetitos.get(i));
 			Nh.start();
-
+			
 		}
-		verificarchoque();
-
+	
+		
 	}
 
 	public void ordenamientoN() {
@@ -116,23 +116,35 @@ public class Logic {
 
 	public void verificarchoque() {
 
-		try {
+
 			for (int i = 0; i < objetitos.size(); i++) {
 				for (int j = 0; j < objetitos.size(); j++) {
 					int dis1= objetitos.get(i).getPosx();
 					int dis2= objetitos.get(i).getPosy();
 					int di1=objetitos.get(j).getPosx();
 					int di2=objetitos.get(j).getPosy();
-					if (PApplet.dist(dis1, dis2, di1, di2) < 7) {
+					if (PApplet.dist(dis1, dis2, di1, di2) < 10) {
 
-						if (j != objetitos.size() && i != objetitos.size()) {
+						//if (j != objetitos.size() && i != objetitos.size()) {
 							
 
 							if (objetitos.get(i) != objetitos.get(j)) {
 								System.out.println("toco");
-								objetitos.get(i).setDirecx(objetitos.get(i).getDirecx()*(-1));
-								objetitos.get(i).setDirecy(objetitos.get(i).getDirecy()*(-1));
 								
+								int direccion= objetitos.get(j).getDirecx();
+								System.out.println(direccion);
+								int direccion2=objetitos.get(j).getDirecy();
+								objetitos.get(j).setDirecx(direccion*(-1));
+								objetitos.get(j).setDirecy(direccion2*(-1));
+								
+								
+								
+								
+								int direccion12= objetitos.get(i).getDirecx();
+								System.out.println(direccion12);
+								int direccion22=objetitos.get(i).getDirecy();
+								objetitos.get(i).setDirecx(direccion12*(-1));
+								objetitos.get(i).setDirecy(direccion22*(-1));
 								/*if (objetitos.get(i) instanceof Sanas && objetitos.get(j) instanceof Infectadas) {
 
 								} else if (objetitos.get(i) instanceof Cuadrado
@@ -141,16 +153,13 @@ public class Logic {
 								}*/
 
 							}
-						}
+						
 					}
 				}
 
 			}
 
-		} catch (IndexOutOfBoundsException e) {
-
-		}
-
+		
 	}
 
 }
