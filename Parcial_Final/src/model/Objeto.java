@@ -90,10 +90,8 @@ public abstract class Objeto implements Runnable,Comparable<Objeto>{
 	public void run() {
 		mover();
 		
-		
-	}
-
 	
+	}
 	
 	
 }
