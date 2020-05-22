@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 import exceptions.ExcepcionPrimera;
@@ -12,11 +13,15 @@ public class Logic {
 	// private LinkedList<Objeto> objetitos2;
 	private String info1[];
 	private PApplet apP;
-
+	private Value_Compare vc;
+	
+	
+	
 	public Logic(PApplet app) {
 
 		apP = app;
 		objetitos = new LinkedList<Objeto>();
+		vc = new Value_Compare();
 		// objetitos2 = new LinkedList<Objeto>();
 		info1 = apP.loadStrings("../insumos/datos.txt");
 		cargartext();
@@ -82,16 +87,26 @@ public class Logic {
 			Nh.start();
 			
 		}
+		
+		
+		
+		
 	
 		
 	}
 
 	public void ordenamientoN() {
 
+		
+		
+		
 	}
 
 	public void ordenamientoP() {
-
+		
+		Collections.sort(objetitos,vc);
+		
+		
 	}
 
 	public void primerae() throws ExcepcionPrimera {

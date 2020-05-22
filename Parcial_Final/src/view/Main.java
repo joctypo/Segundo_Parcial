@@ -43,6 +43,9 @@ public class Main extends PApplet {
 			
 			
 		}
+		fill(0);
+		rect(0,0,100,100);
+		
 		
 	}
 	
