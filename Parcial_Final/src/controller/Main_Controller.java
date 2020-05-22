@@ -24,13 +24,7 @@ public class Main_Controller {
 		
 	}
 
-	public void mouseClicked() {
-		
-		
-		lo.mouseClicked();
-		
-		
-	}
+
 
 	public void keyPressed(char key) {
 		

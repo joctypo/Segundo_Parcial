@@ -45,13 +45,7 @@ public class Main extends PApplet {
 		
 	}
 	
-	public void mouseClicked() {
-		
-		
-		mc.mouseClicked();
-		
-		
-	}
+
 	
 	public void keyPressed() {
 		

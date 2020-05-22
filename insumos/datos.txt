@@ -1,5 +1,3 @@
-Circulo,50,50
-Cuadrado,20,20
-Cuadrado,40,40
-Cuadrado,30,30
-Circulo,30,30
+sanas:98
+infectadas:1
+recuperadas:1
