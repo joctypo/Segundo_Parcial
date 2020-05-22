@@ -78,4 +78,12 @@ public class Main extends PApplet {
 	}
 	
 	
+	public void verficarchoque() {
+		
+		mc.verificarchoque();
+		
+		
+	}
+	
+	
 }//llave del final

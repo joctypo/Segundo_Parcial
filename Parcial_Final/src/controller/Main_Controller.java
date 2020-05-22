@@ -56,4 +56,10 @@ public class Main_Controller {
 		
 	}
 
+	public void verificarchoque() {
+		
+		
+		
+	}
+
 }
