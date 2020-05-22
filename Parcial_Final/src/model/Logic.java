@@ -14,6 +14,7 @@ public class Logic {
 	private String info1[];
 	private PApplet apP;
 	private Value_Compare vc;
+	private int contadorsanas,contadorinfectadas,contadorrecuperadas;
 	
 	
 	
@@ -64,7 +65,7 @@ public class Logic {
 				for (int j = 0; j < tam1; j++) {
 					int pox = (int) (apP.random(1, 500));
 					int poy = (int) (apP.random(100, 500));
-					objetitos.add(new Sanas(7, 7, colorcito, pox, poy, apP));
+					objetitos.add(new Recuperadas(7, 7, colorcito, pox, poy, apP));
 
 				}
 			} // llave del if recuperadas
@@ -88,10 +89,10 @@ public class Logic {
 			
 		}
 		
+		contadores();
 		
-		
-		
-	
+		System.out.println(contadorsanas);
+	System.out.println(contadorrecuperadas);
 		
 	}
 
@@ -144,10 +145,10 @@ public class Logic {
 							
 
 							if (objetitos.get(i) != objetitos.get(j)) {
-								System.out.println("toco");
+								//System.out.println("toco");
 								
 								int direccion= objetitos.get(j).getDirecx();
-								System.out.println(direccion);
+								//System.out.println(direccion);
 								int direccion2=objetitos.get(j).getDirecy();
 								objetitos.get(j).setDirecx(direccion*(-1));
 								objetitos.get(j).setDirecy(direccion2*(-1));
@@ -156,7 +157,7 @@ public class Logic {
 								
 								
 								int direccion12= objetitos.get(i).getDirecx();
-								System.out.println(direccion12);
+								//System.out.println(direccion12);
 								int direccion22=objetitos.get(i).getDirecy();
 								objetitos.get(i).setDirecx(direccion12*(-1));
 								objetitos.get(i).setDirecy(direccion22*(-1));
@@ -177,4 +178,60 @@ public class Logic {
 		
 	}
 
+	
+	public void contadores() {
+		contadorsanas=0;
+		contadorrecuperadas=0;
+		contadorinfectadas=0;
+		for (int j=0;j<objetitos.size();j++) {
+			
+			if(objetitos.get(j) instanceof Sanas) {
+				
+				contadorsanas=contadorsanas+1;
+				
+			}
+			
+			if(objetitos.get(j) instanceof Infectadas) {
+				
+				contadorinfectadas=contadorinfectadas+1;
+				
+			}
+			
+			if(objetitos.get(j) instanceof Recuperadas) {
+				
+				contadorrecuperadas=contadorrecuperadas+1;
+				
+			}
+			
+		}
+		
+	}
+
+	public int getContadorsanas() {
+		return contadorsanas;
+	}
+
+	public void setContadorsanas(int contadorsanas) {
+		this.contadorsanas = contadorsanas;
+	}
+
+	public int getContadorinfectadas() {
+		return contadorinfectadas;
+	}
+
+	public void setContadorinfectadas(int contadorinfectadas) {
+		this.contadorinfectadas = contadorinfectadas;
+	}
+
+	public int getContadorrecuperadas() {
+		return contadorrecuperadas;
+	}
+
+	public void setContadorrecuperadas(int contadorrecuperadas) {
+		this.contadorrecuperadas = contadorrecuperadas;
+	}
+	
+	
+	
+	
 }

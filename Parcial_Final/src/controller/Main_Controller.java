@@ -62,4 +62,25 @@ public class Main_Controller {
 		
 	}
 
+	
+	public int contadors() {
+		
+		
+		lo.getContadorsanas();
+		
+		return lo.getContadorsanas();
+	}
+	
+	
+	public int contadori() {
+		
+		
+		return lo.getContadorinfectadas();
+	}
+	
+	public int contadorr() {
+		
+		
+		return lo.getContadorrecuperadas();
+	}
 }

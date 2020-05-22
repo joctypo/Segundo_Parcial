@@ -49,6 +49,10 @@ public class Main extends PApplet {
 		rect(0,0,600,100);
 		
 		
+		fill (15);
+		textSize(10);
+		text("Sanos" + mc.contadors(),10,10);
+		
 	}
 	
 
