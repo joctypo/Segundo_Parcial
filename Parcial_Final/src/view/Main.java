@@ -37,7 +37,9 @@ public class Main extends PApplet {
 		mc.draw();
 		verficarchoque();
 		if (mensaje1==true) {
-			//coloco el txt
+			fill(255,0,0);
+			textSize(50);
+			text("Mas del 30% estan infectados",20,250);
 			
 		}else if (mensaje2==true) {
 			
@@ -51,7 +53,9 @@ public class Main extends PApplet {
 		
 		fill (15);
 		textSize(10);
-		text("Sanos" + mc.contadors(),10,10);
+		text("Sanos:       " + mc.contadors(),10,10);
+		text("Infectados:       " + mc.contadori(),10,30);
+		text("Recuperados:       " + mc.contadorr(),10,50);
 		
 	}
 	

@@ -2,7 +2,6 @@ package model;
 
 import java.util.Collections;
 import java.util.LinkedList;
-
 import exceptions.ExcepcionPrimera;
 import exceptions.ExcepcionSegunda;
 import processing.core.PApplet;
@@ -15,7 +14,7 @@ public class Logic {
 	private PApplet apP;
 	private Value_Compare vc;
 	private int contadorsanas,contadorinfectadas,contadorrecuperadas;
-	
+	private boolean infecto;
 	
 	
 	public Logic(PApplet app) {
@@ -26,6 +25,7 @@ public class Logic {
 		// objetitos2 = new LinkedList<Objeto>();
 		info1 = apP.loadStrings("../insumos/datos.txt");
 		cargartext();
+		infecto=false;
 	}
 
 	public void cargartext() {
@@ -112,9 +112,9 @@ public class Logic {
 
 	public void primerae() throws ExcepcionPrimera {
 		// Se coloca la excepcion
-		if (objetitos.size() == 0) {
+		if (getContadorinfectadas()>=30) {
 
-			throw new ExcepcionPrimera("Perra no más");
+			throw new ExcepcionPrimera("Más del 30% estan infectados");
 
 		}
 
@@ -122,10 +122,9 @@ public class Logic {
 
 	public void segundae() throws ExcepcionSegunda {
 		// Se coloca la excepcion
-		if (objetitos.size() == 0) {
-
-			throw new ExcepcionSegunda("Perra no más");
-
+		if (infecto==true) {
+			infecto=false;
+			throw new ExcepcionSegunda("Se contagio alguien más");
 		}
 
 	}
@@ -154,19 +153,32 @@ public class Logic {
 								objetitos.get(j).setDirecy(direccion2*(-1));
 								
 								
-								
-								
 								int direccion12= objetitos.get(i).getDirecx();
 								//System.out.println(direccion12);
 								int direccion22=objetitos.get(i).getDirecy();
 								objetitos.get(i).setDirecx(direccion12*(-1));
 								objetitos.get(i).setDirecy(direccion22*(-1));
-								/*if (objetitos.get(i) instanceof Sanas && objetitos.get(j) instanceof Infectadas) {
+								
+								
+								
+								
+								if (objetitos.get(i) instanceof Sanas && objetitos.get(j) instanceof Infectadas) {
 
-								} else if (objetitos.get(i) instanceof Cuadrado
-										&& objetitos.get(j) instanceof Cuadrado) {
-
-								}*/
+									int inf= (int) apP.random(1,11);
+									
+									if (inf>1 && inf<9) {
+										int colorcito= apP.color(255,0,0);
+										objetitos.add(new Infectadas(7, 7, colorcito,objetitos.get(i).getPosx(), objetitos.get(i).getPosy(), apP));
+										objetitos.remove(i);
+										
+									}	
+										
+										
+										
+										
+											
+									
+								}
 
 							}
 						
@@ -232,6 +244,6 @@ public class Logic {
 	}
 	
 	
-	
+
 	
 }
