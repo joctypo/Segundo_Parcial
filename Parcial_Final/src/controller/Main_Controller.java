@@ -58,7 +58,7 @@ public class Main_Controller {
 
 	public void verificarchoque() {
 		
-		
+		lo.verificarchoque();
 		
 	}
 

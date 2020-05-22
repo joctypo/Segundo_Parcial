@@ -82,6 +82,7 @@ public class Logic {
 			Nh.start();
 
 		}
+		verificarchoque();
 
 	}
 
@@ -122,17 +123,22 @@ public class Logic {
 					int dis2= objetitos.get(i).getPosy();
 					int di1=objetitos.get(j).getPosx();
 					int di2=objetitos.get(j).getPosy();
-					if (PApplet.dist(dis1, dis2, di1, di2) < 40) {
+					if (PApplet.dist(dis1, dis2, di1, di2) < 7) {
 
 						if (j != objetitos.size() && i != objetitos.size()) {
+							
 
 							if (objetitos.get(i) != objetitos.get(j)) {
-								if (objetitos.get(i) instanceof Circulo && objetitos.get(j) instanceof Circulo) {
+								System.out.println("toco");
+								objetitos.get(i).setDirecx(objetitos.get(i).getDirecx()*(-1));
+								objetitos.get(i).setDirecy(objetitos.get(i).getDirecy()*(-1));
+								
+								/*if (objetitos.get(i) instanceof Sanas && objetitos.get(j) instanceof Infectadas) {
 
 								} else if (objetitos.get(i) instanceof Cuadrado
 										&& objetitos.get(j) instanceof Cuadrado) {
 
-								}
+								}*/
 
 							}
 						}
