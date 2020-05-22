@@ -15,6 +15,7 @@ public class Logic {
 	private Value_Compare vc;
 	private int contadorsanas,contadorinfectadas,contadorrecuperadas;
 	private boolean infecto;
+	private boolean infeccion;
 	
 	
 	public Logic(PApplet app) {
@@ -26,6 +27,7 @@ public class Logic {
 		info1 = apP.loadStrings("../insumos/datos.txt");
 		cargartext();
 		infecto=false;
+		infeccion=true;
 	}
 
 	public void cargartext() {
@@ -53,7 +55,7 @@ public class Logic {
 				for (int j = 0; j < tam1; j++) {
 					int pox = (int) (apP.random(1, 500));
 					int poy = (int) (apP.random(100, 500));
-					objetitos.add(new Infectadas(7, 7, colorcito, pox, poy, apP));
+					objetitos.add(new Infectadas(7, 7, colorcito, pox, poy,infeccion, apP));
 
 				}
 			} // llave del if infectadas
@@ -168,7 +170,7 @@ public class Logic {
 									
 									if (inf>1 && inf<9) {
 										int colorcito= apP.color(255,0,0);
-										objetitos.add(new Infectadas(7, 7, colorcito,objetitos.get(i).getPosx(), objetitos.get(i).getPosy(), apP));
+										objetitos.add(new Infectadas(7, 7, colorcito,objetitos.get(i).getPosx(), objetitos.get(i).getPosy(),infeccion, apP));
 										objetitos.remove(i);
 										
 									}	

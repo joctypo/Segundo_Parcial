@@ -14,9 +14,9 @@ public class Infectadas extends Objeto{
 	private int direcy;
 	private int signo;
 	private int signo2;
+	private boolean infecc;
 	
-	
-	public Infectadas(int tam1, int tam2, int colorcito, int pox, int poy, PApplet apP) {
+	public Infectadas(int tam1, int tam2, int colorcito, int pox, int poy, boolean infeccion, PApplet apP) {
 		super(tam1, tam2, colorcito, pox, poy, apP);
 		this.posx=pox;
 		this.posy=poy;
@@ -24,7 +24,7 @@ public class Infectadas extends Objeto{
 		this.tamx=tam1;
 		this.tamy=tam2;
 		this.app2=apP;
-		
+		this.infecc=infeccion;
 		signo=(int)app2.random(1,3);
 		direcx=(int)app2.random(1,4);
 		if (signo==2) {
@@ -40,6 +40,14 @@ public class Infectadas extends Objeto{
 			direcy= direcy*(-1);
 		}
 		
+	}
+
+	public boolean isInfecc() {
+		return infecc;
+	}
+
+	public void setInfecc(boolean infecc) {
+		this.infecc = infecc;
 	}
 
 	public void mover() {
